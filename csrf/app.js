@@ -4,12 +4,13 @@ const session = require('koa-session');
 const CSRF = require('koa-csrf');
 const router = require('@koa/router')();
 
+// csrf 跨站请求伪造 利用用户已经建立好的身份验证会话来攻击用户，所以需要判断通过csrf校验中间件
+
 const app = module.exports = new Koa();
 
 /**
- * csrf need session
+ * csrf need session 模拟已经建立好的身份校验
  */
-
 app.keys = ['session key', 'csrf example'];
 app.use(session(app));
 app.use(koaBody());
