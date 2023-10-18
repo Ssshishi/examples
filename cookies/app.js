@@ -7,6 +7,7 @@ const Koa = require('koa');
 const app = module.exports = new Koa();
 
 app.use(async function(ctx) {
+  // ～～ 双非位运算 最终就是把数字变成整数
   const n = ~~ctx.cookies.get('view') + 1;
   ctx.cookies.set('view', n);
   ctx.body = n + ' views';
