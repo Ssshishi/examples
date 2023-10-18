@@ -13,6 +13,7 @@ const koaBody = require('koa-body');
 
 const app = module.exports = new Koa();
 
+//koa-body 默认情况下，它会解析application/x-www-form-urlencoded和multipart/form-data类型的请求数据
 app.use(koaBody({ multipart: true }));
 
 app.use(async function(ctx) {
