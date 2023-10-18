@@ -8,10 +8,10 @@ const Koa = require('koa');
 const app = module.exports = new Koa();
 
 // "database"
-
+// 数据库信息
 const posts = [];
 
-// middleware
+// middleware 
 
 app.use(logger());
 
