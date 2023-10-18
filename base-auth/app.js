@@ -1,10 +1,11 @@
 const Koa = require('koa');
+// koa-basic-auth 基本的身份验证
 const auth = require('koa-basic-auth');
 
 const app = module.exports = new Koa();
 
 // custom 401 handling
-
+// 自定义401处理方式，中间件
 app.use(async function(ctx, next) {
   try {
     await next();
@@ -20,7 +21,7 @@ app.use(async function(ctx, next) {
 });
 
 // require auth
-
+// 配置验证的身份信息
 app.use(auth({ name: 'tj', pass: 'tobi' }));
 
 // secret response
